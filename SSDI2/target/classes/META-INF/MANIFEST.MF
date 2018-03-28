@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SSDI2
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: hi5an
+Implementation-Vendor-Id: uncc.ssdi
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/SSDI2
+Created-By: Maven Integration for Eclipse
+

@@ -18,7 +18,7 @@ import java.util.Date;
 	public class Product implements Serializable, IProduct {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+	    private long id;
 
 	    @NotBlank
 	    private String name;
@@ -38,17 +38,20 @@ import java.util.Date;
 	    @NotBlank
 	    private String sellerId;
 	    
+	    @NotBlank
+	    private String imageurl;
+	    
 	   
 
-	    @Column(nullable = false, updatable = false)
+	   /* @Column(nullable = false, updatable = false)
 	    @Temporal(TemporalType.TIMESTAMP)
 	    @CreatedDate
-	    private Date createdAt;
+	    private Date createdAt;*/
 
-	    @Column(nullable = false)
+	   /* @Column(nullable = false)
 	    @Temporal(TemporalType.TIMESTAMP)
 	    @LastModifiedDate
-	    private Date updatedAt;
+	    private Date updatedAt;*/
 
 		public Long getId() {
 			return id;
@@ -85,6 +88,14 @@ import java.util.Date;
 		public float getMinPrice() {
 			return minPrice;
 		}
+		
+		public void setImageurl(String imageurl) {
+			this.imageurl = imageurl;
+		}
+		
+		public String getImageurl() {
+			return imageurl;
+		}
 
 		public void setMinPrice(float minPrice) {
 			this.minPrice = minPrice;
@@ -106,7 +117,7 @@ import java.util.Date;
 			this.sellerId = sellerId;
 		}
 
-		public Date getCreatedAt() {
+	/*	public Date getCreatedAt() {
 			return createdAt;
 		}
 
@@ -120,7 +131,7 @@ import java.util.Date;
 
 		public void setUpdatedAt(Date updatedAt) {
 			this.updatedAt = updatedAt;
-		}
+		}*/
 
 	    
 	}
