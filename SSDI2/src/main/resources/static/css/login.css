@@ -1,0 +1,35 @@
+body {
+    background-color: #E3E3E3;
+    font-size: 12px;
+} 
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    color: #4f4f4f;
+    font-family: "BebasNeue", sans-serif;
+    margin: 0;
+    font-weight: normal;
+}
+
+/* header/navbar*/
+
+#header{
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    padding-top: 30px;
+}
+
+#header .leftbox{
+    float:left;
+    display: inline;
+}
+
+#header .rightbox{
+    float:right;
+    display: inline;
+    width: 200px;
+}
