@@ -47,7 +47,7 @@ public class TestProductService {
 	public void testAddProduct() {
 		//Given
 		// we want to call real method for saving, but this call doesnt permits call to abstract methods
-		Mockito.when(productRespository.save(dummyProd)).then((Answer<?>) productRespository.save(dummyProd));
+		Mockito.when(productRespository.save(dummyProd)).thenReturn(dummyProd);
 		
 		//productRespository.save(dummyProd);
 		
@@ -56,6 +56,9 @@ public class TestProductService {
 		
 		//Then
 		assertThat(product, is(dummyProd));
+		
+		//verify
+		verify(productRespository).save(dummyProd);
 	}
 	
 	

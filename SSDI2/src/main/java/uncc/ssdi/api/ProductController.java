@@ -1,12 +1,15 @@
 package uncc.ssdi.api;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -45,15 +48,6 @@ public class ProductController {
     }
 	
 	
-	@GetMapping("/quote")
-    public ModelAndView placeQuote(@ModelAttribute("prod") Product product) {
-        ModelAndView mav = new ModelAndView("hello");
-        List<Product> productList = productService.getAllProducts();
-	    mav.addObject("productList", productList);
-	   
-	    return mav;
-    }
-	
 	@RequestMapping("/addproduct")
 	public ModelAndView addProduct() {
 		 ModelAndView mav = new ModelAndView("addProduct");
@@ -66,6 +60,23 @@ public class ProductController {
 		product.setSellerid(i);
 		productService.addProduct(product);
 		ModelAndView mav = new ModelAndView("addProductSuccess");
+		return mav;
+	}
+	
+	
+	@RequestMapping(value = "/buyProduct", method = RequestMethod.GET)
+	public ModelAndView buyProduct(@RequestParam("prodId")int prodId) {
+		System.out.println(prodId);
+		ModelAndView mav = new ModelAndView("displaySingleProduct");
+		List<Product> productListAll = productService.getAllProducts();
+		List<Product> productListOne = new ArrayList<Product>();
+		for(Product prod: productListAll) {
+			if (prod.getId() == prodId) {
+				productListOne.add(prod);
+				break;
+			}
+		}
+		mav.addObject("productList", productListOne);
 		return mav;
 	}
 	

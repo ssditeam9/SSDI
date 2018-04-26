@@ -4,10 +4,6 @@ import uncc.ssdi.model.User;
 
 public interface IUserService {
 
-	
-
-	
-
 	public void addUser(User u);
 
 	public User checkUser(User S);

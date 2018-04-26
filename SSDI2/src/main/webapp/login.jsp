@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="../css/reg.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <title>Log In</title>
 </head>
@@ -14,10 +15,9 @@
 <div id ="registerDiv" ng-controller="registerController">
  	<div class="logoutLblPos"> 
  	<p>Don't have an account?
- 		<input name="signIn" type="submit" value="Register" ng-click="register()">
- 	</p> 
- 	<p>Not a seller?
- 		<input name="home" type="submit" value="Buy Products" ng-click="goToHome()">
+ 		<input name="signIn" type="submit" style="width: 100px" value="Register" ng-click="register()">
+ 	Not a seller?
+ 		<input name="home" type="submit" style="width: 200px" value="Buy Products" ng-click="goToHome()">
  	</p> 
  	</div> 
  </div>

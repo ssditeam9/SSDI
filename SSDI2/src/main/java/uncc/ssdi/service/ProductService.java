@@ -2,10 +2,8 @@ package uncc.ssdi.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import uncc.ssdi.dao.ProductRepository;
 import uncc.ssdi.model.Product;
 
@@ -30,7 +28,7 @@ public class ProductService implements IProductService {
 		return list;
 	}
 	
-	public void test(long lg) {
+	public void test(Integer lg) {
 		System.out.println("**********inside test in service");
 		boolean present = ProductRepository.existsById(lg);
 		 System.out.println("**************8"+present);
@@ -44,4 +42,6 @@ public class ProductService implements IProductService {
 			return null;
 		}
 	}
+
+
 }

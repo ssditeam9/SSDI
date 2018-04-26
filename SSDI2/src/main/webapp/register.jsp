@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="../css/reg.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 <title>Seller Register</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -12,10 +13,10 @@
 <body ng-app="myapp">
 	<div ng-controller="logoutController" >
 		<div class="logoutLblPos">
-			<p>Already have an account?</p>
-			<input name="signIn" type="submit" value="Sign In" ng-click="signIn()">
-				<br>Not a seller? <br> <input name="home" type="submit"
-					value="Buy Products" ng-click="goToHome()">
+			<p>Already have an account?
+			<input name="signIn" type="submit" value="Sign In" style="width: 100px"  ng-click="signIn()">
+				Not a seller?  <input name="home" type="submit"
+					value="Buy Products" style="width: 200px"  ng-click="goToHome()"></p>
 		</div>
 	</div>
 	<div id="container">
