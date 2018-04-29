@@ -81,6 +81,25 @@ public class TestProductController {
 	
 
 	
+	@Test
+	public void testAddProductsUrl() throws Exception {
+		this.mockMvc.perform(get("/api/addproduct"))
+        .andExpect(status().isOk());
+	}
+	
+	@Test
+	public void testAddProductSuccess() throws Exception{
+		Product p=new Product();
+		p.setName("watch");
+		Mockito.when(productService.addProduct(p)).thenReturn(p);
+		//Mockito.when(productService).addProduct(p).;
+		//Check if a non null object is returned
+		assertNotNull(productController.addProductSuccess(p, 10));
+		//Check if the seller id is being set or not
+		assertEquals(10, p.getSellerid());
+		
+		Mockito.verify(productService).addProduct(p);
+	}
 	
 
 }
