@@ -2,14 +2,17 @@ package uncc.ssdi.model;
 
 
 import java.io.Serializable;
-
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 
 	@Entity
@@ -26,47 +29,33 @@ import javax.validation.constraints.NotBlank;
 	    private int id;
 
 	    @Column
-	    private String name;
+	    private String userEmail;
 	    
 	    @Column
-	    private String description;
+	    private String number;
 	    
 	    @Column
-	    private Double basePrice;
+	    private String holder;
 	    
 	    @Column
-	    private Double minPrice;
+	    private String date;
 	    
 	    @Column
-	    private Integer quantity;
-
-	    @Column
-	    private String imageurl;
+	    private String cvv;
 	    
 	    @Column
-	    private int sellerid;
-	    
-	    public int getSellerid() {
-			return sellerid;
-		}
-
-		public void setSellerid(int sellerid) {
-			this.sellerid = sellerid;
-		}
-
-		public Payment() {
-	    	
-	    }
-
-	/* @Column(nullable = false, updatable = false)
+	    private String address;
+	   
+	 
+	    /**@Column(nullable = false, updatable = false)
 	    @Temporal(TemporalType.TIMESTAMP)
 	    @CreatedDate
-	    private Date createdAt;*/
+	    private Date createdAt;
 
-	   /* @Column(nullable = false)
+	    @Column(nullable = false)
 	    @Temporal(TemporalType.TIMESTAMP)
 	    @LastModifiedDate
-	    private Date updatedAt;*/
+	    private Date updatedAt;**/
 
 		public int getId() {
 			return id;
@@ -76,66 +65,71 @@ import javax.validation.constraints.NotBlank;
 			this.id = id;
 		}
 
-		public String getName() {
-			return name;
+		
+		
+		public String getUserEmail() {
+			return userEmail;
 		}
 
-		public void setName(String name) {
-			this.name = name;
+		public void setUserEmail(String userEmail) {
+			this.userEmail = userEmail;
 		}
 
-		public String getDescription() {
-			return description;
+		public String getNumber() {
+			return number;
 		}
 
-		public void setDescription(String description) {
-			this.description = description;
+		public void setNumber(String number) {
+			this.number = number;
 		}
 
-		public  Double getBasePrice() {
-			return basePrice;
+		public String getHolder() {
+			return holder;
 		}
 
-		public void setBasePrice( Double d) {
-			this.basePrice = d;
+		public void setHolder(String holder) {
+			this.holder = holder;
 		}
 
-		public Double getMinPrice() {
-			return minPrice;
+		public String getDate() {
+			return date;
+		}
+
+		public void setDate(String date) {
+			this.date = date;
+		}
+
+		public String getCvv() {
+			return cvv;
+		}
+
+		public void setCvv(String cvv) {
+			this.cvv = cvv;
 		}
 		
-		public void setImageurl(String imageurl) {
-			this.imageurl = imageurl;
-		}
 		
-		public String getImageurl() {
-			return imageurl;
+
+		public String getAddress() {
+			return address;
 		}
 
-		public void setMinPrice(Double minPrice) {
-			this.minPrice = minPrice;
+		public void setAddress(String address) {
+			this.address = address;
 		}
 
-		public Integer getQuantity() {
-			return quantity;
-		}
+		public Payment() {}
 
-		public void setQuantity(Integer quantity) {
-			this.quantity = quantity;
-		}
-
-		public Payment(int id, String name, String description, Double basePrice, Double minPrice, Integer quantity,
-				String imageurl, int sellerid) {
+		public Payment(int id, String userEmail, String number, String holder, String date, String cvv, String address ) {
 			super();
 			this.id = id;
-			this.name = name;
-			this.description = description;
-			this.basePrice = basePrice;
-			this.minPrice = minPrice;
-			this.quantity = quantity;
-			this.imageurl = imageurl;
-			this.sellerid = sellerid;
+			this.userEmail = userEmail;
+			this.number = number;
+			this.holder = holder;
+			this.date = date;
+			this.cvv = cvv;
+			this.address = address;
 		}
+
 		
 		
 
